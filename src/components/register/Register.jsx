@@ -20,7 +20,7 @@ function Register ({ onRouteChange, loadUser }) {
 
     const onRegSubmit = (event) => {
         event.preventDefault();
-        fetch('https://facedetectionappbackend.onrender.com/register', {
+        fetch('/backend/register', {
             method: "post",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({

@@ -17,7 +17,7 @@ function SignIn({ onRouteChange, loadUser }) {
     const onSubmitSignIn = (event) => {
         event.preventDefault();
 
-        fetch('https://facedetectionappbackend.onrender.com/signin', {
+        fetch('/backend/signin', {
             method: 'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({

@@ -1,5 +1,6 @@
 import { setState, useState, useEffect } from 'react';
 import './App.css';
+import Cors from 'cors';
 import Navigation from './components/navigation/Navigation'
 import Logo from '/src/components/logo/Logo'
 import ImageLinkForm from '/src/components/imagelinkform/ImageLinkForm'
@@ -94,7 +95,7 @@ function App() {
     event.preventDefault()
     document.getElementById('imagelink').value = '';
     
-    fetch('https://facedetectionappbackend.onrender.com/imageurl', {
+    fetch('/backend/imageurl', {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
