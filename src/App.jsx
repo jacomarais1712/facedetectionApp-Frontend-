@@ -97,7 +97,7 @@ function App() {
     event.preventDefault()
     document.getElementById('imagelink').value = '';
     
-    fetch(BACKENDAPI + '/imageurl', {
+    fetch(`${import.meta.env.BACKENDAPI}/imageurl`, {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -108,7 +108,7 @@ function App() {
     .then(response => {
       if (response) {
         calculateFaceLocation(response)
-        fetch(BACKENDAPI + '/image', {
+        fetch(`${import.meta.env.BACKENDAPI}/image`, {
           method: 'put',
           headers: {'content-type' : 'application/json'},
           body: JSON.stringify({

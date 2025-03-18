@@ -20,7 +20,7 @@ function Register ({ onRouteChange, loadUser }) {
 
     const onRegSubmit = (event) => {
         event.preventDefault();
-        fetch(BACKENDAPI + '/register', {
+        fetch(`${import.meta.env.BACKENDAPI}/register`, {
             method: "post",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({
