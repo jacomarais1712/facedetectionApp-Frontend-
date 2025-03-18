@@ -1,6 +1,5 @@
 import { setState, useState, useEffect } from 'react';
 import './App.css';
-import dotenv from 'dotenv';
 import Navigation from './components/navigation/Navigation'
 import Logo from '/src/components/logo/Logo'
 import ImageLinkForm from '/src/components/imagelinkform/ImageLinkForm'
@@ -10,8 +9,6 @@ import ParticlesBg from 'particles-bg'
 import MouseParticles from 'react-mouse-particles'
 import SignIn from '/src/components/signin/SignIn'
 import Register from '/src/components/register/Register'
-
-dotenv.config();
 
 function App() {
   const [input, setInput] = useState('')
