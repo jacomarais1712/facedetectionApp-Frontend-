@@ -24,6 +24,7 @@ function App() {
     entries: 0,
     joined: ''
     });
+    console.log(import.meta.env.VITE_BACKENDAPI)
 
   const loadUser = (data) => {
     setUser(
@@ -94,7 +95,7 @@ function App() {
     event.preventDefault()
     document.getElementById('imagelink').value = '';
     
-    fetch(`${import.meta.env.BACKENDAPI}/imageurl`, {
+    fetch(`${import.meta.env.VITE_BACKENDAPI}/imageurl`, {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -105,7 +106,7 @@ function App() {
     .then(response => {
       if (response) {
         calculateFaceLocation(response)
-        fetch(`${import.meta.env.BACKENDAPI}/image`, {
+        fetch(`${import.meta.env.VITE_BACKENDAPI}/image`, {
           method: 'put',
           headers: {'content-type' : 'application/json'},
           body: JSON.stringify({
