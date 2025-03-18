@@ -1,6 +1,6 @@
 import { setState, useState, useEffect } from 'react';
 import './App.css';
-import Cors from 'cors';
+import dotenv from 'dotenv';
 import Navigation from './components/navigation/Navigation'
 import Logo from '/src/components/logo/Logo'
 import ImageLinkForm from '/src/components/imagelinkform/ImageLinkForm'
@@ -10,6 +10,8 @@ import ParticlesBg from 'particles-bg'
 import MouseParticles from 'react-mouse-particles'
 import SignIn from '/src/components/signin/SignIn'
 import Register from '/src/components/register/Register'
+
+dotenv.config();
 
 function App() {
   const [input, setInput] = useState('')
@@ -95,7 +97,7 @@ function App() {
     event.preventDefault()
     document.getElementById('imagelink').value = '';
     
-    fetch('/backend/imageurl', {
+    fetch(BACKENDAPI + '/imageurl', {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -106,7 +108,7 @@ function App() {
     .then(response => {
       if (response) {
         calculateFaceLocation(response)
-        fetch('/backend/image', {
+        fetch(BACKENDAPI + '/image', {
           method: 'put',
           headers: {'content-type' : 'application/json'},
           body: JSON.stringify({
