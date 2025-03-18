@@ -94,7 +94,7 @@ function App() {
     event.preventDefault()
     document.getElementById('imagelink').value = '';
     
-    fetch('http://localhost:3001/imageurl', {
+    fetch('https://myfacedetectappb.onrender.com:3001/imageurl', {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -105,7 +105,7 @@ function App() {
     .then(response => {
       if (response) {
         calculateFaceLocation(response)
-        fetch('http://localhost:3001/image', {
+        fetch('https://myfacedetectappb.onrender.com:3001/image', {
           method: 'put',
           headers: {'content-type' : 'application/json'},
           body: JSON.stringify({
