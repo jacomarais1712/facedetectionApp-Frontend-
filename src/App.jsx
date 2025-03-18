@@ -106,7 +106,7 @@ function App() {
     .then(response => {
       if (response) {
         calculateFaceLocation(response)
-        fetch('https://myfacedetectappb.onrender.com/image', {
+        fetch('/backend/image', {
           method: 'put',
           headers: {'content-type' : 'application/json'},
           body: JSON.stringify({
