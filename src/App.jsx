@@ -24,7 +24,6 @@ function App() {
     entries: 0,
     joined: ''
     });
-    console.log(import.meta.env.VITE_BACKENDAPI)
 
   const loadUser = (data) => {
     setUser(
