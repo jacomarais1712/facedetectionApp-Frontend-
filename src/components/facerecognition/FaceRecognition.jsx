@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './FaceRecognition.css';
 
 const FaceRecognition = ({ imageUrl, boxes, onHandleError, imageValid }) => {
-    console.log(imageValid);
-    console.log(imageUrl);
     if (imageUrl !== null) {
         return(
             <div className='boxcenter ma'>

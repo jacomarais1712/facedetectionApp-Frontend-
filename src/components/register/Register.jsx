@@ -34,7 +34,6 @@ function Register ({ onRouteChange, loadUser }) {
             if (data.id) {
                 loadUser(data)
                 onRouteChange('home')
-                console.log("registration success")
             }
         })
     }

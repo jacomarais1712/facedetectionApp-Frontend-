@@ -72,7 +72,6 @@ function App() {
 };
 
   const calculateFaceLocation = (data) => {
-    // const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const clarifaiFaces = data.outputs[0].data.regions;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
@@ -86,7 +85,6 @@ function App() {
         bottomRow: height - (face.region_info.bounding_box.bottom_row * height)
         })
       }
-    console.log(faces);
     setBoxes(faces);
   }
 
